@@ -6,13 +6,13 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBjR804Vs_sidWcgP_EJaMA7ZZp15Cvclo",
-  authDomain: "angie-mom-studio.firebaseapp.com",
-  projectId: "angie-mom-studio",
-  storageBucket: "angie-mom-studio.firebasestorage.app",
-  messagingSenderId: "583068742280",
-  appId: "1:583068742280:web:4a72ab8322fb39c391a53d",
-  measurementId: "G-XGRZSRK6JD"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  // measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID 
 };
 
 // Initialize Firebase
