@@ -1,0 +1,69 @@
+.hero {
+    min-height: calc(100vh - 93px);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Добавляем для уверенности */
+}
+
+.content_wrapper {
+    max-width: 700px;
+    text-align: center;
+}
+
+/* ... все остальные стили для .title, .description, .cta_button остаются такими же ... */
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    white-space: pre-line;
+}
+
+.description {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 1.5rem auto 0;
+    max-width: 550px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.cta_button {
+    margin-top: 3rem;
+    height: 58px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 50px;
+    background-color: #E85A9B;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px #E85A9B;
+}
+
+.cta_button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px -10px #E85A9B;
+}
+
+.title_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.edit_button {
+  position: absolute;
+  top: 0;
+  right: -50px; /* Располагаем справа от заголовка */
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.edit_button:hover {
+  opacity: 1;
+}

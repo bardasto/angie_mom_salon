@@ -1,0 +1,14 @@
+.wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form {
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 450px;
+}
+.title {
+    font-family: 'Montserrat', sans-serif;
+}

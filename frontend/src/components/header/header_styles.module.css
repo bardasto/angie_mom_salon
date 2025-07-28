@@ -1,0 +1,124 @@
+.header {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: transparent;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.nav_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+}
+
+/* --- НАЧАЛО ИЗМЕНЕНИЙ --- */
+
+.nav_link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    
+    /* 1. Создаем контекст для позиционирования линии */
+    position: relative; 
+    padding-bottom: 8px; /* Добавляем место для линии снизу */
+}
+
+.nav_link:hover {
+    color: #000;
+}
+
+/* 2. Создаем саму линию в ее "скрытом" состоянии */
+.nav_link::after {
+    content: ''; /* Обязательное свойство для псевдоэлементов */
+    position: absolute; /* Позиционируем относительно .nav_link */
+    bottom: 0; /* Прижимаем к низу */
+    left: 0; /* Начинаем слева */
+    
+    width: 0; /* Изначально линия невидима (нулевая ширина) */
+    height: 2px; /* Толщина линии */
+    background-color: #E85A9B; /* Розовый цвет, как у кнопки */
+
+    /* 3. Задаем плавность анимации */
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 4. При наведении на ссылку, "отращиваем" линию до 100% ширины */
+.nav_link:hover::after {
+    width: 100%;
+}
+
+/* --- КОНЕЦ ИЗМЕНЕНИЙ --- */
+
+.lang_button {
+    background: none;
+    border: 1px solid #ddd;
+    color: #777;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang_button:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #000;
+}
+
+.header_cta_button {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 30px;
+    height: 45px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+    margin-left: 1rem; 
+}
+
+.header_cta_button:hover {
+    background-color: #000;
+    transform: scale(1.05);
+}
+
+.mobile_nav_link {
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 1rem;
+}
