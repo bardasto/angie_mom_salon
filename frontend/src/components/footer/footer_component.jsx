@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, Title, Grid } from '@mantine/core';
 import styles from './footer_styles.module.css';
 
-export const FooterComponent = () => {
+// Оборачиваем компонент в forwardRef
+export const FooterComponent = (props, ref) => {
     const { t } = useTranslation();
 
     return (
-        <footer className={styles.footer}>
+        <footer id="contacts" className={styles.footer}>
             <div className={styles.inner}>
                 <Grid gutter={50}>
                     <Grid.Col span={{ base: 12, sm: 5 }}>

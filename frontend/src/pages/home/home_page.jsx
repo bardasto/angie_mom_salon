@@ -3,11 +3,10 @@ import { HeroComponent } from '../../components/hero/hero_component.jsx';
 import { PortfolioComponent } from '../../components/portfolio/portfolio_component.jsx';
 import { MasterComponent } from '../../components/master/master_component.jsx';
 
-// Принимаем пропс isAdminPage
+// БОЛЬШЕ НИКАКИХ forwardRef И ПРОПСОВ С ССЫЛКАМИ.
 export const HomePage = ({ isAdminPage = false }) => {
   return (
     <>
-      {/* Передаем пропс дальше в дочерние компоненты */}
       <HeroComponent isAdminPage={isAdminPage} />
       <PortfolioComponent isAdminPage={isAdminPage} />
       <MasterComponent isAdminPage={isAdminPage} />

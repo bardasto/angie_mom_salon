@@ -1,9 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  /* НОВЫЙ ФОН: Очень светлый, теплый, почти бумажный */
   background-color: #F9F6F4; 
-  /* НОВЫЙ ЦВЕТ ТЕКСТА: Контрастный, темно-графитовый */
   color: #1a1a1a; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

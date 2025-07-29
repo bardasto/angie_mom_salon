@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react'; // 1. ИМПОРТИРУЕМ forwardRef
 import { useState, useEffect } from 'react';
 import { Title, Button, ActionIcon, Overlay, Center, Skeleton, Modal } from '@mantine/core';
 import { IconTrash, IconPlus } from '@tabler/icons-react';
@@ -13,7 +13,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './portfolio_styles.module.css';
 
-export const PortfolioComponent = ({ isAdminPage }) => {
+// 2. ОБОРАЧИВАЕМ ВАШ РАБОЧИЙ КОМПОНЕНТ
+export const PortfolioComponent = ({ isAdminPage }, ref) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [modalOpened, setModalOpened] = useState(false);
@@ -61,7 +62,8 @@ export const PortfolioComponent = ({ isAdminPage }) => {
     const sectionTitle = isAdminPage ? "Manage Portfolio" : "Our Works";
 
     return (
-        <section className={styles.portfolio_section}>
+        // 3. ПРИКРЕПЛЯЕМ ref К ГЛАВНОМУ ТЕГУ
+        <section  id="portfolio" className={styles.portfolio_section}>
             <Modal
                 opened={modalOpened}
                 onClose={() => setModalOpened(false)}
@@ -103,7 +105,7 @@ export const PortfolioComponent = ({ isAdminPage }) => {
                     {images.map(image => (
                         <SwiperSlide key={image.id}>
                             <div className={styles.slide_wrapper}>
-                                <img src={image.url} alt="Nail art example" className={styles.portfolio_image} />
+                                <img src={image.url} alt="Nail art example" className={styles.portfolio_image} loading="lazy" />
                                 {isAdminPage && (
                                     <Overlay color="#000" opacity={0} zIndex={1} className={styles.overlay} radius="md">
                                         <ActionIcon
